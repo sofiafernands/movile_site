@@ -1,34 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary w-100 fixed-top">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">DavidRiphones</a>
+  const [expanded, setExpanded] = useState(false);
 
-        <div className="input-group">
-            <input type="text" className="form-control-sm" placeholder="buscar marca o modelo" aria-label="tex" aria-describedby="login"/>
-            <button className="btn btn-outline-secondary" type="submit" id="login">Button</button>
+  return (
+    <nav className="navbar navbar-expand-lg fixed-top">
+      <div className="container-fluid">
+        <a className="navbar-brand text-white" href="#">DavidRiphones</a>
+        <button
+          className="navbar-toggler mb-2"
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className={`collapse navbar-collapse ${expanded ? 'show' : ''}`}>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-white">
+            <li className="nav-item">
+              <a className="nav-link active text-white" aria-current="page" href="#">
+                Servicios
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#">
+                Contacto
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#">
+                Blog
+              </a>
+            </li>
+          </ul>
         </div>
-          
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Tlf</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Correo</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Direccion</a>
-              </li>
-            </ul>
-            <input classNameName='login' type='button' value='Login' />
-          </div>
-        </div>
-      </nav>
-    );
+        <section className="d-flex">
+          <input type='text' className='me-2 rounded small ' placeholder='reparacion por modelo' />
+          <button className="btn btn btn-dark me-2" type="submit">
+            Iniciar sesión
+          </button>
+          <button className="btn btn-secondary" type="submit">
+            Registrarse
+          </button>
+        </section>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
