@@ -41,7 +41,7 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link text-white" href="tel:692982400">
               <FaPhone className="me-2" size={24} />
-                Tlf
+                (+34) 692 982 400
               </a>
             </li>
             <li className="nav-item">
