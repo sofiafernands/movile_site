@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
-      <div className="container-fluid">
+      <div className="container-fluid mx-auto mb-2 mt-2">
         <a className="navbar-brand text-white" href="#">DavidRiphones</a>
         <button
           className="navbar-toggler mb-2"
