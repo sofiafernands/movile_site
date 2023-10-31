@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import Navbar from './front/component/navbar';
-import MovileRepair from './front/pages/movileRepair';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MovileRepair from './front/pages/movileRepair/index.js'
 
 function App() {
   return (
