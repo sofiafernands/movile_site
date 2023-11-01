@@ -10,9 +10,10 @@ import React from "react";
 import './movileRepair.css';
 
 
+
 function MovileRepair() {
     return (
-        <div>
+        <div className='d-inline-flex p-2 col-12'>
             <div className=" d-flex">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-6">

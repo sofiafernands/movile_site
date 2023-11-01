@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './front/component/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovileRepair from './front/pages/movileRepair/index.js'
+import FormClient from "./front/pages/formClient";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Navbar/>
           <Routes >
             <Route path="/" element={<MovileRepair />} />
+            <Route path="/formclient" element={<FormClient />} />
           </Routes>
         </header>
       </div>
