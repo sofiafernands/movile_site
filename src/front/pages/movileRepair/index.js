@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import iphonr13 from '../images/iphone13.png';
 import { FaMobileAlt } from "react-icons/fa";
 import { MdBrokenImage } from "react-icons/md";
 import iphone13 from '../../img/iphone13.png'

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './navbar.css';
@@ -11,13 +12,14 @@ import { FaPhone } from 'react-icons/fa';
 
 
 
+
 function Navbar() {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top ">
       <div className="container-fluid mx-auto me-3 ms-3 mt-2">
-        <a className="navbar-brand text-white" href="/">DavidRiphones</a>
+        <Link to="/" className="navbar-brand text-white" href="/">DavidRiphones</Link>
         <button
           className="navbar-toggler mb-2"
           type="button"
