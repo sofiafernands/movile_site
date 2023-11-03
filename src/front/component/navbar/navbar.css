@@ -1,7 +1,0 @@
-.navbar {
-    background: rgb(66,61,61);
-background: -moz-linear-gradient(0deg, rgba(66,61,61,0.9734032040550595) 0%, rgba(2,2,2,1) 49%, rgba(66,60,60,1) 99%);
-background: -webkit-linear-gradient(0deg, rgba(66,61,61,0.9734032040550595) 0%, rgba(2,2,2,1) 49%, rgba(66,60,60,1) 99%);
-background: linear-gradient(0deg, rgba(66,61,61,0.9734032040550595) 0%, rgba(2,2,2,1) 49%, rgba(66,60,60,1) 99%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#423d3d",endColorstr="#423c3c",GradientType=1);
-}
