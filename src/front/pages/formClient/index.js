@@ -3,59 +3,68 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function FormClient() {
+    const [nombre, setNombre] = useState("");
+    const [correo, setCorreo] = useState("");
     const [marca, setMarca] = useState("");
     const [modelo, setModelo] = useState("");
-    const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
-    const [correo, setCorreo] = useState("");
-    const [estadoEquipo, setEstadoEquipo] = useState("");
+    const [estado, setEstado] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log({ marca, modelo, nombre, apellido, correo, estadoEquipo });
-    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log({ nombre, correo, marca, modelo, estado });
+
+        setNombre("");
+        setCorreo("");
+        setMarca("");
+        setModelo("");
+        setEstado("");
+    };
 
     return (
-        <div className="container mt-5 col-6">
-            <h2 className="text-center">Formulario de Cliente</h2>
+        <section className="bg-white dark:bg-gray-900">
+        <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+            <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">¿En que te podemos ayudar?</h2>
             <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="marca" className="form-label">Marca</label>
-                    <select className="form-select" id="marca" aria-label="Default select example" value={marca} onChange={(e) => setMarca(e.target.value)}>
-                        <option defaultValue>Selecciona una marca</option>
-                        <option value="1">Marca 1</option>
-                        <option value="2">Marca 2</option>
-                        <option value="3">Marca 3</option>
-                    </select>
+                <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                    <div className="w-full">
+                        <label htmlFor="nombre" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Nombre" required="" value={nombre} onChange={e => setNombre(e.target.value)}/>
+                    </div>
+                    <div className="w-full">
+                        <label htmlFor="correo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo contacto</label>
+                        <input type="email" name="correo" id="correo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Correo" required="" value={correo} onChange={e => setCorreo(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="marca" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca</label>
+                        <select id="marca" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value={marca} onChange={e => setMarca(e.target.value)}>
+                            <option value="">Select</option>
+                            <option value="TV">TV/Monitors</option>
+                            <option value="PC">PC</option>
+                            <option value="GA">Gaming/Console</option>
+                            <option value="PH">Phones</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="modelo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo</label>
+                        <select id="modelo" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value={modelo} onChange={e => setModelo(e.target.value)}>
+                            <option value="">Select </option>
+                            <option value="TV">TV/Monitors</option>
+                            <option value="PC">PC</option>
+                            <option value="GA">Gaming/Console</option>
+                            <option value="PH">Phones</option>
+                        </select>
+                    </div>
+                    <div className="sm:col-span-2">
+                        <label htmlFor="estado" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado del equipo</label>
+                        <textarea id="estado" rows="8" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Estado del equipo" value={estado} onChange={e => setEstado(e.target.value)}></textarea>
+                    </div>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="modelo" className="form-label">Modelo</label>
-                    <select className="form-select" id="modelo" aria-label="Default select example" value={modelo} onChange={(e) => setModelo(e.target.value)}>
-                        <option defaultValue>Selecciona un modelo</option>
-                        <option value="1">Modelo 1</option>
-                        <option value="2">Modelo 2</option>
-                        <option value="3">Modelo 3</option>
-                    </select>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="nombre" className="form-label">Nombre</label>
-                    <input type="text" className="form-control" id="nombre" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="apellido" className="form-label">Apellido</label>
-                    <input type="text" className="form-control" id="apellido" placeholder="Apellido" value={apellido} onChange={(e) => setApellido(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="correo" className="form-label">Correo Electrónico</label>
-                    <input type="email" className="form-control" id="correo" placeholder="nombre@ejemplo.com" value={correo} onChange={(e) => setCorreo(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="estadoEquipo" className="form-label">Estado del equipo</label>
-                    <textarea className="form-control" id="estadoEquipo" rows="5" value={estadoEquipo} onChange={(e) => setEstadoEquipo(e.target.value)}></textarea>
-                </div>
-                <button type="submit" className="btn btn-primary">Enviar</button>
+                <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                    Enviar 
+                </button>
             </form>
         </div>
+      </section>
     );
 }
 

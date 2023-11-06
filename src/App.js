@@ -5,6 +5,7 @@ import Navbar from './front/component/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormClient from "./front/pages/formClient";
 import Home from "./front/pages/home";
+import FormCompany from "./front/pages/formCompany";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={< Home />} />
             <Route path="/formclient" element={<FormClient />} />
+            <Route path="/formcompany" element={<FormCompany />} />
           </Routes>
         </header>
       </div>
