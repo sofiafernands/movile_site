@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { useNavigate } from "react-router-dom";
 
 function FormClient() {
     const [nombre, setNombre] = useState("");
@@ -8,6 +9,7 @@ function FormClient() {
     const [marca, setMarca] = useState("");
     const [modelo, setModelo] = useState("");
     const [estado, setEstado] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,6 +21,10 @@ function FormClient() {
         setModelo("");
         setEstado("");
     };
+
+    const handleCancel = () => {
+        navigate("/");
+    }
 
     return (
         <section className="bg-white dark:bg-gray-900">
@@ -62,6 +68,11 @@ function FormClient() {
                 <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
                     Enviar 
                 </button>
+                <button
+                        onClick={handleCancel}
+                        className="py-2.5 px-5 ml-4 text-sm font-medium text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        Cancelar
+                    </button>
             </form>
         </div>
       </section>
