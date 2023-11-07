@@ -8,7 +8,7 @@ function SpecialRate() {
     return (
 
 <section className="bg-gray-800 ">
-    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mt-5 mb-5">
     <div className=" lg:mt-0 lg:col-span-5 lg:flex mr-5">
             <img src={company} alt="mockup" className="rounded-5"/>
         </div>   

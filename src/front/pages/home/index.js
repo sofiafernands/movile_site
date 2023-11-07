@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import MobileRepair from "../../component/mobileRepair";
 import SpecialRate from "../../component/special_rate";
 import DataRecovery from "../../component/data_recovery";
+import RepairCourses from "../../component/repair_courses";
 
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
             < MobileRepair />
             < SpecialRate />
             < DataRecovery />   
+            < RepairCourses />
         </div>
 
     )

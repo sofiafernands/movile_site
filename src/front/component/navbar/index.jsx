@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './navbar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { MdEmail } from 'react-icons/md';
 //import { FaPhone } from 'react-icons/fa';
 
@@ -15,9 +14,9 @@ function Navbar() {
 
   return (
 
-    <div>
+    <div className='mb-5 bg-white'>  
 
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-10 top-0">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <Link to="/" className="flex items-center">
              <img src="https://images.vexels.com/media/users/3/140965/isolated/preview/a945eef28564ae85fff5ac18adf637d9-icono-de-telefono-redondo.png" className="h-8 mr-3" alt="..." /> 
@@ -30,7 +29,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      <nav className="bg-gray-50 dark:bg-gray-600 ">
+      <nav className="bg-gray-50 dark:bg-gray-600 fixed w-full z-10 top-20 ">
         <div className="max-w-screen-xl px- py-4  mx-auto">
           <div className="flex items-center ">
             <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
