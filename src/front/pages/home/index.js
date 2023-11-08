@@ -5,6 +5,7 @@ import MobileRepair from "../../component/mobileRepair";
 import SpecialRate from "../../component/special_rate";
 import DataRecovery from "../../component/data_recovery";
 import RepairCourses from "../../component/repair_courses";
+import AboutUs from "../../component/about_us";
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
             < SpecialRate />
             < DataRecovery />   
             < RepairCourses />
+            < AboutUs />    
         </div>
 
     )

@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 import Footer  from "./front/component/footer";
 
 
+
 function ScrollToTop () {
   const { pathname } = useLocation();     
   useEffect(() => {
