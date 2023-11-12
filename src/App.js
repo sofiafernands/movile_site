@@ -9,6 +9,7 @@ import Home from "./front/pages/home";
 import FormCompany from "./front/pages/formCompany";
 import { useLocation } from "react-router-dom";
 import Footer  from "./front/component/footer";
+import DataRecovery from "./front/component/data_recovery";
 
 
 

@@ -6,11 +6,13 @@ import SpecialRate from "../../component/special_rate";
 import DataRecovery from "../../component/data_recovery";
 import RepairCourses from "../../component/repair_courses";
 import AboutUs from "../../component/about_us";
+import Services from "../../component/services";
 
 
 function Home() {
     return (
         <div className="d-flex row ">
+            < Services />
             < MobileRepair />
             < SpecialRate />
             < DataRecovery />   

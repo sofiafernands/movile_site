@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './navbar.css';
+//import './navbar.css';
 //import { MdEmail } from 'react-icons/md';
 //import { FaPhone } from 'react-icons/fa';
 
@@ -14,8 +14,7 @@ function Navbar() {
 
   return (
 
-    <div className='mb-5 bg-white'>  
-
+    <div className='mb-5 bg-white'>   
       <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-10 top-0">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <Link to="/" className="flex items-center">
@@ -25,7 +24,10 @@ function Navbar() {
           <div className="flex items-center mt-3">
             <a href="tel:692982400" className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">(34) 692 982 400</a>
             <a href="mailto:info@davidriphones.com" className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">Correo</a>
-            <a href="#" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a>
+            <a href="#" className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">Blog</a>
+            <a href="#" className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">FAQ</a>
+            <Link to='/' className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">Nosotros</Link>
+
           </div>
         </div>
       </nav>
@@ -34,22 +36,23 @@ function Navbar() {
           <div className="flex items-center ">
             <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
               <li>
-                <a href="#" className="text-gray-900 dark:text-white hover:underline" aria-current="page">Servicios</a>
+                <Link to="#" className="text-gray-900 dark:text-white hover:underline" aria-current="page">REPARAR IPHONE</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 dark:text-white hover:underline">Blog</a>
+                <Link to="#" className="text-gray-900 dark:text-white hover:underline">REPARAR MACBOOK</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 dark:text-white hover:underline">Recuperacion de datos</a>
+                <Link to="#" className="text-gray-900 dark:text-white hover:underline">RECUPERACION DE DATOS</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900 dark:text-white hover:underline">Tarifas especiales</a>
+                <Link to="#" className="text-gray-900 dark:text-white hover:underline">TARIFAS PARA EMPRESAS</Link>
               </li>
              
             </ul>
           </div>
         </div>
       </nav>
+    
     </div>
 
 
@@ -57,68 +60,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-
-
-{/* <nav classNameName="navbar navbar-expand-lg fixed-top ">
-<div classNameName="container-fluid mx-auto me-3 ms-3 mt-2">
-  <Link to="/" classNameName="navbar-brand text-white" href="/">DavidRiphones</Link>
-  <button
-    classNameName="navbar-toggler mb-2"
-    type="button"
-    onClick={() => setExpanded(!expanded)}
-    aria-label="Toggle navigation"
-  >
-    <span classNameName="navbar-toggler-icon"></span>
-  </button>
-  <div classNameName={`collapse navbar-collapse ${expanded ? 'show' : ''}`}>
-    <ul classNameName="navbar-nav me-auto mb-2 mb-lg-0 text-white">
-      <li classNameName="nav-item">
-        <a classNameName="nav-link active text-white" aria-current="page" href="/">
-          Servicios
-        </a>
-      </li>
-      <li classNameName="nav-item">
-        <a classNameName="nav-link text-white" href="mailto:info@davidriphones.com">
-        <MdEmail classNameName="me-2" size={24} />
-          Contacto
-        </a>
-      </li>
-      <li classNameName="nav-item">
-        <a classNameName="nav-link text-white" href="tel:692982400">
-        <FaPhone classNameName="me-2" size={24} />
-          (+34) 692 982 400
-        </a>
-      </li>
-      <li classNameName="nav-item">
-        <a classNameName="nav-link text-white" href="#">
-          Blog
-        </a>
-      </li>
-    </ul>
-  </div>
-  <section classNameName="d-flex">
-  <div classNameName="d-flex align-items-center">
-      <div classNameName="input-group">
-        <span classNameName="input-group-text">
-          <FontAwesomeIcon icon={faSearch} />
-        </span>
-        <input
-          type="text"
-          classNameName="form-control small"
-          placeholder="Reparación por modelo"
-          aria-label="Reparación por modelo"
-        />
-      </div>
-    </div>
-    <FontAwesomeIcon icon={faUser} classNameName='d-flex m-2 align-items-center'/>
-    <button classNameName="btn btn btn-dark me-2" type="submit">
-      Iniciar sesión
-    </button>
-    <button classNameName="btn btn-secondary" type="submit">
-      Registrarse
-    </button>
-  </section>
-</div>
-</nav> */}
