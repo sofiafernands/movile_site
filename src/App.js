@@ -9,7 +9,7 @@ import Home from "./front/pages/home";
 import FormCompany from "./front/pages/formCompany";
 import { useLocation } from "react-router-dom";
 import Footer  from "./front/component/footer";
-import DataRecovery from "./front/component/data_recovery";
+import Faq from "./front/pages/faq";
 
 
 
@@ -35,6 +35,7 @@ function App() {
             <Route path="/" element={< Home />} />
             <Route path="/formclient" element={<FormClient />} />
             <Route path="/formcompany" element={<FormCompany />} />
+            <Route path="/faq" element= {<Faq />} />
           </Routes>
           < Footer />
         </header>
