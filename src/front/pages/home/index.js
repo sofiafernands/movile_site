@@ -7,6 +7,7 @@ import DataRecovery from "../../component/data_recovery";
 import RepairCourses from "../../component/repair_courses";
 import AboutUs from "../../component/about_us";
 import Services from "../../component/services";
+import Gallery from "../../component/galeria";
 
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
             < SpecialRate />
             < DataRecovery />   
             < RepairCourses />
+            < Gallery />    
             < AboutUs />    
         </div>
 

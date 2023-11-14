@@ -13,7 +13,7 @@ function SpecialRate() {
             <img src={company} alt="mockup" className="rounded-5"/>
         </div>   
         <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="mt-4 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl ">eciales para empresas</h1>
+            <h1 className="animate-pulse mt-4 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl ">Tarifas especiales para empresas</h1>
             <p className="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">Beneficiate de tarifas especiales para tu empresa, contactanos o solicita nuestras tarifas unicamente para empresas</p>
             <Link to="formCompany" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 ">
                 ¿Eres empresa?

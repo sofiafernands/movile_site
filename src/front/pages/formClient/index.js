@@ -40,7 +40,7 @@ function FormClient() {
     return (
         <section className="bg-white dark:bg-gray-900 mt-5 py-5">
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-                <h2 className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl mt-2">¿Necesitas saber cuánto costará la reparación de tu móvil? Estamos aquí para ayudarte. Completa nuestro formulario y recibirás un presupuesto personalizado en breve. Confía en nosotros para una solución asequible y eficaz</h2>
+                <h2 className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl mt-5">¿Necesitas saber cuánto costará la reparación de tu móvil? Estamos aquí para ayudarte. Completa nuestro formulario y recibirás un presupuesto personalizado en breve. Confía en nosotros para una solución asequible y eficaz</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div className="w-full">

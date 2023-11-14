@@ -7,7 +7,7 @@ const Faq = () => {
         <section class="bg-white dark:bg-gray-900 text-black ">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
             <div class=" mb-8 lg:mb-16 flex flex-col mt-5 ">
-                <h2 class="animate-wiggle-more mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mt-5">Preguntas frecuentes</h2>
+                <h2 class="animate-jump-in mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mt-5">Preguntas frecuentes</h2>
                 <p class="text-gray-500 sm:text-xl dark:text-gray-400">En nuestro servicio de reparaciones móviles, nos especializamos en ofrecer soluciones rápidas y efectivas para los problemas más comunes. Ya sea que tu dispositivo tenga problemas de pantalla, batería o cualquier otro inconveniente, estamos aquí para ayudarte a recuperar la funcionalidad de tu móvil. Descubre las respuestas a las preguntas más frecuentes a continuación.</p>
             </div>
             <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
