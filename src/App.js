@@ -29,8 +29,9 @@ function App() {
       {/* utilizamos scrolltotop para subir el scrol en cada iteracion entre componentes */}
       < ScrollToTop /> 
       <div className="App">
+      <Navbar/>
         <header className="App-header">
-          <Navbar/>
+          
           <Routes>
             <Route path="/" element={< Home />} />
             <Route path="/formclient" element={<FormClient />} />

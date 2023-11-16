@@ -6,6 +6,12 @@ module.exports = {
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      textColor: ['hover'],
+      textDecoration: ['hover'],
+    },
+  },
   plugins: [
     require('flowbite/plugin'),
     require('tailwindcss-animated')
