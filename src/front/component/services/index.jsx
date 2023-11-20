@@ -12,7 +12,7 @@ function Services() {
     const services = [
         { title: "FACE ID", Icon: LuScanFace, description: "Descricion de Face ID" },
         { title: "CPU", Icon: BsCpu, description: "Descripcion de CPU" },
-        { title: "COBERTURA", Icon: BiNoSignal, description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus necessitatibus facere expedita doloremque atque labore unde et ipsum! Harum provident ut quod iste sit accusantium consectetur magni consequuntur." },
+        { title: "COBERTURA", Icon: BiNoSignal, description: "Descripción COBERTURA" },
         { title: "NO CARGA", Icon: BsBatteryCharging, description: "Descripción de NO CARGA" },
         { title: "NO ENCIENDE", Icon: IoMdPower, description: "Descripcion de no enciende" },
     ];

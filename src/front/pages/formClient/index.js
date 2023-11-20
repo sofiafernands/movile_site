@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 
 function FormClient() {
     const [name, setName] = useState("");
@@ -9,6 +8,8 @@ function FormClient() {
     const [brand, setBrand] = useState("");
     const [model, setModel] = useState("");
     const [state, setState] = useState("");
+    const [errors, setErrors] = useState({});
+    //const [ isSubmitted, setIsSubmitted ] = useState(false)
     const navigate = useNavigate();
 
     const modelList = {
@@ -22,8 +23,31 @@ function FormClient() {
         "Otros": ["Otros"]
     }
 
+    const validate = () => {
+        let tempErrors = {};
+
+        if (name.trim() === "") tempErrors.name = "El campo nombre es obligatorio";
+        if (email.trim() === "") tempErrors.email = "El campo email es obligatorio";
+        if (!email.includes("@")) tempErrors.email = "Por favor, introduce un correo electrónico válido.";
+        if (brand.trim() === "") tempErrors.brand = "El campo marca es obligatorio";
+        if (model.trim() === "") tempErrors.model = "El campo modelo es obligatorio";
+        else if (name.length < 3) tempErrors.name = "El nombre debe tener al menos 3 caracteres";
+        else if (name.length > 50) tempErrors.name = "El nombre no puede tener más de 50 caracteres";
+        else if (state.length > 500) tempErrors.state = "El estado no puede tener más de 500 caracteres";
+
+        setErrors(tempErrors);
+
+        return Object.keys(tempErrors).length === 0;
+    };
+    useEffect(() => {
+        console.log(errors);
+    }, [errors]);
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!validate()) return;
         console.log({ name, email, brand, model, state });
 
         setName("");
@@ -31,6 +55,7 @@ function FormClient() {
         setBrand("");
         setModel("");
         setState("");
+
     };
 
     const handleCancel = () => {
@@ -38,9 +63,9 @@ function FormClient() {
     }
 
     return (
-        <section className="bg-white dark:bg-gray-900 mt-5 py-5">
+        <section className="bg-white dark:bg-gray-900  py-5">
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-                <h2 className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl mt-5">¿Necesitas saber cuánto costará la reparación de tu móvil? Estamos aquí para ayudarte. Completa nuestro formulario y recibirás un presupuesto personalizado en breve. Confía en nosotros para una solución asequible y eficaz</h2>
+                <h2 className="mb-8 lg:mb-16 font-light text-center text-black dark:text-gray-400 sm:text-xl">¿Necesitas saber cuánto costará la reparación de tu móvil? Estamos aquí para ayudarte. Completa nuestro formulario y recibirás un presupuesto personalizado en breve. Confía en nosotros para una solución asequible y eficaz</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div className="w-full">
@@ -53,8 +78,9 @@ function FormClient() {
                                 placeholder="name"
                                 required="" value={name}
                                 onChange={e => setName(e.target.value)} />
+                            {errors.name && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.name} </p></div>}
                         </div>
-                        <div className="w-full">
+                        <div className="w-full ">
                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">email contacto</label>
                             <input
                                 type="email"
@@ -66,23 +92,22 @@ function FormClient() {
                                 placeholder="email"
                                 required=""
                             />
+                            {errors.email && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.email} </p></div>}
                         </div>
                         <div>
-                            {/* label asociado mediate htmlFor con menu desplegable "brand" */}
                             <label htmlFor="brand" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca</label>
                             <select id="brand"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 value={brand}
                                 onChange={e => setBrand(e.target.value)}>
                                 <option value="">Selecciona un marca</option>
-                                {/* iteracion sobre las claves "brand" del objeto "modelList" utilizando Object.keys(modeList).map(brand) para obtener un array que contiene todas las claves (propiedades) del objeto llamado "modelList'*/}
                                 {Object.keys(modelList).map((brand) => (
                                     <option key={brand} value={brand}>{brand}</option>
                                 ))}
                             </select>
+                            {errors.brand && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.brand} </p></div>}
                         </div>
                         <div>
-                            {/* select con un mapeo en opciones segun la eleccion de "modelList" */}
                             <label htmlFor="model" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo</label>
                             <select id="model" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 value={model}
@@ -92,20 +117,30 @@ function FormClient() {
                                     <option key={model} value={model}>{model}</option>
                                 ))}
                             </select>
+                            {errors.model && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.model} </p></div>}
                         </div>
                         <div className="sm:col-span-2">
                             <label htmlFor="state" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado del equipo</label>
-                            <textarea id="state" rows="8" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="state del equipo" value={state} onChange={e => setState(e.target.value)}></textarea>
+                            <textarea id="state" rows="8" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="estado actual del equipo"
+                                value={state}
+                                onChange={e => setState(e.target.value)}></textarea>
+                            {errors.state && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.state} </p></div>}
+                            <p className="text-gray-500 text-xs text-left">Maximo 500 caracteres</p>
                         </div>
+
+
                     </div>
-                    <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                        Enviar
-                    </button>
-                    <button
-                        onClick={handleCancel}
-                        className="py-2.5 px-5 ml-4 text-sm font-medium text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                        Cancelar
-                    </button>
+                    <button 
+    type="submit" 
+    className="inline-flex justify-center items-center px-4 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 w-36">
+    Enviar
+</button>
+<button
+    onClick={handleCancel}
+    className="inline-flex justify-center items-center px-4 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-36 ml-4">
+    Cancelar
+</button>
                 </form>
             </div>
         </section>
