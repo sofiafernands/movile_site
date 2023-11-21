@@ -9,6 +9,9 @@ function FormClient() {
     const [model, setModel] = useState("");
     const [state, setState] = useState("");
     const [errors, setErrors] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+
     //const [ isSubmitted, setIsSubmitted ] = useState(false)
     const navigate = useNavigate();
 
@@ -47,14 +50,20 @@ function FormClient() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!validate()) return;
-        console.log({ name, email, brand, model, state });
+        if (validate()) {
+            console.log({ name, email, brand, model, state });
 
-        setName("");
-        setEmail("");
-        setBrand("");
-        setModel("");
-        setState("");
+            setName("");
+            setEmail("");
+            setBrand("");
+            setModel("");
+            setState(""); 
+            setSuccessMessage("¡Gracias por tu confianza, en breve te contactaremos!"); // una vez que se envia el formulario, se cambia el estado de successMessage a true "volver a inicio "
+            setIsSubmitted(true); //una vez que se envia el formulario, se cambia el estado de isSubmitted a true "volver a inicio "
+
+            console.log(successMessage)
+
+        }
 
     };
 
@@ -67,6 +76,15 @@ function FormClient() {
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
                 <h2 className="mb-8 lg:mb-16 font-light text-center text-black dark:text-gray-400 sm:text-xl">¿Necesitas saber cuánto costará la reparación de tu móvil? Estamos aquí para ayudarte. Completa nuestro formulario y recibirás un presupuesto personalizado en breve. Confía en nosotros para una solución asequible y eficaz</h2>
                 <form onSubmit={handleSubmit}>
+                    {successMessage && <div className="success text-blue-800 font-bold">{successMessage} </div>}
+                    {isSubmitted && (
+                <button
+                    onClick={() => navigate("/")}
+                    className="inline-flex justify-center items-center px-4 py-2 mt-4 mb-5 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 "
+                >
+                    Volver a la página principal
+                </button>
+            )}
                     <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div className="w-full">
                             <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">name</label>
@@ -128,19 +146,17 @@ function FormClient() {
                             {errors.state && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.state} </p></div>}
                             <p className="text-gray-500 text-xs text-left">Maximo 500 caracteres</p>
                         </div>
-
-
                     </div>
-                    <button 
-    type="submit" 
-    className="inline-flex justify-center items-center px-4 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 w-36">
-    Enviar
-</button>
-<button
-    onClick={handleCancel}
-    className="inline-flex justify-center items-center px-4 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-36 ml-4">
-    Cancelar
-</button>
+                    <button
+                        type="submit"
+                        className="inline-flex justify-center items-center px-4 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 w-36">
+                        Enviar
+                    </button>
+                    <button
+                        onClick={handleCancel}
+                        className="inline-flex justify-center items-center px-4 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-36 ml-4">
+                        Cancelar
+                    </button>
                 </form>
             </div>
         </section>
