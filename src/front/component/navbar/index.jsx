@@ -9,8 +9,6 @@ import { RiWhatsappFill } from "react-icons/ri";
 
 
 
-
-
 function Navbar() {
 
 
