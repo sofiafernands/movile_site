@@ -2,12 +2,13 @@ import React from "react";
 import "./faq.css";
 
 
+
 const Faq = () => {
     return (
-        <section className="bg-white dark:bg-gray-900 text-black ">
+        <section className="bg-gray-200 dark:bg-gray-900 text-black ">
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
             <div className=" mb-8 lg:mb-16 flex flex-col ">
-                <h2 className="animate-jump-in mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mt-3">Preguntas frecuentes</h2>
+                <h2 className="text-4xl font-bold mb-6 animate__animated animate__fadeIn">Preguntas frecuentes</h2>
                 <p className="text-gray-500 sm:text-xl dark:text-gray-400">En nuestro servicio de reparaciones móviles, nos especializamos en ofrecer soluciones rápidas y efectivas para los problemas más comunes. Ya sea que tu dispositivo tenga problemas de pantalla, batería o cualquier otro inconveniente, estamos aquí para ayudarte a recuperar la funcionalidad de tu móvil. Descubre las respuestas a las preguntas más frecuentes a continuación.</p>
             </div>
             <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">

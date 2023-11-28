@@ -43,7 +43,7 @@ function Navbar() {
   {/* Enlaces de navegación */}
   <Link to='/faq'><FaPersonCircleQuestion className='h-5 w-5 text-yellow-500 ' /></Link>
   <Link to="/faq" className="ml-1 text-sm text-gray-500 d-none dark:text-white hover:underline d-md-block">FAQ</Link>
-  <Link to="/faq" className="ml-1 text-sm text-gray-500 dark:text-white hover:underline d-md-block">Nosotros</Link>
+  <Link to="/nosotros" className="ml-1 text-sm text-gray-500 dark:text-white hover:underline d-md-block">Nosotros</Link>
 </div>
 
       </div><nav className="bg-gray-400 p-3 ">

@@ -15,6 +15,7 @@ import DataRecoveryInfo from "./front/pages/recuperacion-de-datos";
 import MacbookRepairInfo from "./front/pages/reparacion-de-macbook";
 import IphoneRepairInfo from "./front/pages/reparacion-de-iphone";
 import SoftwareUpdateInfo from "./front/pages/actualizacion-de-software";
+import Nosotros from "./front/pages/nosotros";
 
 
  
@@ -45,6 +46,7 @@ function App() {
             <Route path="/reparaciondemcbook" element={< MacbookRepairInfo />} />
             <Route path="/reparaciondeiphone" element={< IphoneRepairInfo />} />
             <Route path="/actualizaciondesoftware" element={< SoftwareUpdateInfo />} />
+            <Route path="nosotros" element={<Nosotros />} />  
           </Routes>
           <Footer />
         </header>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Select from 'react-select';
+
 
 
 function FormClient() {
@@ -15,16 +17,23 @@ function FormClient() {
     //const [ isSubmitted, setIsSubmitted ] = useState(false)
     const navigate = useNavigate();
 
+
     const modelList = {
         "Iphone": ["Iphone 14", "Iphone 14 Plus", "Iphone 14 ProMax", "Iphone 14 Pro", "Iphone 13", "Iphone 13 Pro", "Iphone 13 ProMax",
             "Iphone 13 Mini", "Iphone 12", "Iphone 12 Mini", "Iphone 12 ProMax", "Iphone 12 Pro", "Iphone 11", "Iphone 11 Pro", "Iphone 11 ProMax",
             "Iphone X", "Iphone Xs", "Iphone Xs Max", "Iphone Xr", "Iphone SE", "Iphone 8", "Iphone 8 Plus", "Iphone 7", "Iphone 7 Plus",
             "Iphone 6", "Iphone 6Plus", "Iphone 5"],
+
         "MacBook": ["MacBook Pro", "MacBook Air", "MacBook"],
+        "Ipad": ["Ipad Pro", "Ipad Air", "Ipad Mini", "Ipad"],
         "Samsung": ["Samsung Galaxy S20", "Samsung Galaxy S10", "Samsung Galaxy S9", "Samsung Galaxy S8", "Samsung Galaxy S7", "Samsung Galaxy S6", "Samsung Galaxy S5"],
         "Appel Watch": ["Appel Watch Series 6", "Appel Watch Series 5", "Appel Watch Series 4", "Appel Watch Series 3", "Appel Watch Series 2", "Appel Watch Series 1"],
         "Otros": ["Otros"]
     }
+
+    //constante que recibe el valor de la marca y devuelve el modelo de manera dinamica usando select de react
+    const modelOptions = modelList[brand]?.map((model) => ({ value: model, label: model }));
+    const brandOptions = Object.keys(modelList).map((brand) => ({ value: brand, label: brand }));
 
     const validate = () => {
         let tempErrors = {};
@@ -42,11 +51,10 @@ function FormClient() {
 
         return Object.keys(tempErrors).length === 0;
     };
+
     useEffect(() => {
         console.log(errors);
     }, [errors]);
-
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -57,14 +65,12 @@ function FormClient() {
             setEmail("");
             setBrand("");
             setModel("");
-            setState(""); 
+            setState("");
             setSuccessMessage("¡Gracias por tu confianza, en breve te contactaremos!"); // una vez que se envia el formulario, se cambia el estado de successMessage a true "volver a inicio "
             setIsSubmitted(true); //una vez que se envia el formulario, se cambia el estado de isSubmitted a true "volver a inicio "
 
             console.log(successMessage)
-
         }
-
     };
 
     const handleCancel = () => {
@@ -78,13 +84,13 @@ function FormClient() {
                 <form onSubmit={handleSubmit}>
                     {successMessage && <div className="success text-blue-800 font-bold">{successMessage} </div>}
                     {isSubmitted && (
-                <button
-                    onClick={() => navigate("/")}
-                    className="inline-flex justify-center items-center px-4 py-2 mt-4 mb-5 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 "
-                >
-                    Volver a la página principal
-                </button>
-            )}
+                        <button
+                            onClick={() => navigate("/")}
+                            className="inline-flex justify-center items-center px-4 py-2 mt-4 mb-5 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-primary-200 "
+                        >
+                            Volver a la página principal
+                        </button>
+                    )}
                     <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                         <div className="w-full">
                             <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">name</label>
@@ -114,27 +120,28 @@ function FormClient() {
                         </div>
                         <div>
                             <label htmlFor="brand" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca</label>
-                            <select id="brand"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                value={brand}
-                                onChange={e => setBrand(e.target.value)}>
-                                <option value="">Selecciona un marca</option>
-                                {Object.keys(modelList).map((brand) => (
-                                    <option key={brand} value={brand}>{brand}</option>
-                                ))}
-                            </select>
+                            <Select
+                                id="brand"
+                                className="basic-single bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                classNamePrefix="select"
+                                isSearchable
+                                name="brand"
+                                options={brandOptions}
+                                onChange={e => setBrand(e.value)}
+                            />
                             {errors.brand && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.brand} </p></div>}
                         </div>
                         <div>
                             <label htmlFor="model" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo</label>
-                            <select id="model" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                value={model}
-                                onChange={e => setModel(e.target.value)}>
-                                <option value="">Selecciona un modelo</option>
-                                {modelList[brand]?.map((model) => (
-                                    <option key={model} value={model}>{model}</option>
-                                ))}
-                            </select>
+                            <Select
+                                id="model"
+                                className="basic-single bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                classNamePrefix="select"
+                                isSearchable
+                                name="model"
+                                options={modelOptions}
+                                onChange={e => setModel(e.value)}
+                            />
                             {errors.model && <div className="error flex flex-row mb-3"><p className="text-red-600 text-xs flex">{errors.model} </p></div>}
                         </div>
                         <div className="sm:col-span-2">
