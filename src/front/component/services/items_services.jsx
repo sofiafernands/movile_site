@@ -25,7 +25,7 @@ function ServiceItem({ title, Icon, description, isOpen, onOpen }) {
         <div>
             <button 
             onClick={handleClick}
-             className={`ml-3 inline-flex justify-center mr-5 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-gray-300 ${styleClass} focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800`}>
+             className={`ml-3  inline-flex justify-center mr-1 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-gray-300 ${styleClass} focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800`}>
                 {title} <Icon className="ml-1 h-5" />
             </button>
             <div className={`overflow-hidden transition-all duration-500 ${isOpen ? 'h-auto' : 'h-0'}`}>

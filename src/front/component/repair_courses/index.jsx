@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function RepairCourses() {
     return (
 
-        <section className="bg-gray-800 dark:bg-gray-900">
+        <section className="bg-gradient-to-r from-black to-gray-700  dark:bg-gray-900">
     <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div className="grid grid-cols-2 gap-4 mt-8">
             <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1"/>

@@ -9,8 +9,7 @@ function AboutUs () {
       <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Comprometidos con la Calidad y la Satisfacción del Cliente</h2>
           <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">En nuestro centro de reparaciones móviles, nos enorgullece ofrecer una garantía completa en todos nuestros servicios, respaldada por años de experiencia en la industria y precios competitivos. Nos esforzamos por brindar a nuestros clientes la tranquilidad de saber que su inversión está protegida y que su dispositivo está en manos de expertos.
-
-Esto proporciona una visión general de lo que ofreces y establece una base sólida para el listado de checks que planeas incluir a continuación.</p>
+.</p>
       </div>
       <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
 

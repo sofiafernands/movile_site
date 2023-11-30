@@ -6,7 +6,7 @@ import ButtomCompany from "../buttomCompany";
 
 function SpecialRate() {
     return (
-        <section className="bg-gray-800 ">
+        <section className="bg-gradient-to-r from-black to-gray-700  ">
             <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mt-2 mb-2">
                 <div className="lg:mt-0 lg:col-span-5 lg:flex">
                     <img src={company} alt="mockup" className="rounded-5 max-w-full"/>

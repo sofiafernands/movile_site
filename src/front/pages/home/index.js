@@ -7,8 +7,14 @@ import DataRecovery from "../../component/data_recovery";
 import RepairCourses from "../../component/repair_courses";
 import AboutUs from "../../component/about_us";
 import Services from "../../component/services";
-import Gallery from "../../component/galeria";
+import Carousel from 'react-bootstrap/Carousel';
+import circuito from "../../img/circuito.jpg";
 
+const images = [
+    {src: circuito, alt: 'Imagen 1'},
+    {src: circuito, alt: 'Imagen 1'},
+    {src: circuito, alt: 'Imagen 1'}
+  ];
 
 function Home() {
     return (
@@ -18,7 +24,19 @@ function Home() {
             < SpecialRate />
             < DataRecovery />   
             < RepairCourses />
-            {/* < Gallery />     */}
+            <Carousel>
+              {images.map((image, index) => (
+                <Carousel.Item key={index}>
+                  <img
+                    className="d-block w-100 h-56"
+                    src={image.src}
+                    alt={image.alt}
+                    style={{height: '550px', objectFit: 'cover'}}
+
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
             < AboutUs />    
         </div>
 

@@ -5,7 +5,7 @@ const Nosotros = () => {
   return (
        <div className="bg-white text-black p-8">
         <section className="bg-white py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-      <h1 className="text-4xl font-bold mb-6 animate__animated animate__fadeIn">
+      <h1 className="animate-fade-down text-4xl font-bold mb-6 animate__animated animate__fadeIn">
         Transformando la Reparación Profesional con 15 Años de Innovación, Garantía y Conocimiento Compartido
       </h1>
 

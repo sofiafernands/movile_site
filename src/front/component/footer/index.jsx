@@ -16,7 +16,7 @@ function Footer () {
               </div>
               <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                   <div>
-                      <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                      <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Recursos</h2>
                       <ul className="text-gray-600 dark:text-gray-400">
                           <li className="mb-4">
                               <Link to="/faq" className="hover:underline">Preguntas frecuentes</Link>
@@ -27,7 +27,7 @@ function Footer () {
                       </ul>
                   </div>
                   <div>
-                      <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                      <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">REDES</h2>
                       <ul className="text-gray-600 dark:text-gray-400">
                           <li className="mb-4">
                           <a href="https://www.youtube.com/@davidriphones" target="_blank" rel="noopener noreferrer" className="hover:underline">Youtube</a>
