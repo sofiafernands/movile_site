@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { GrInstagram } from "react-icons/gr";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
+import './navbar.css';
 
 
 

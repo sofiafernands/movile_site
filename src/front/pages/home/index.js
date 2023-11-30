@@ -18,7 +18,7 @@ function Home() {
             < SpecialRate />
             < DataRecovery />   
             < RepairCourses />
-            < Gallery />    
+            {/* < Gallery />     */}
             < AboutUs />    
         </div>
 

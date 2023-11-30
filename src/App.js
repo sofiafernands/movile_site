@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import Navbar from './front/component/navbar';
@@ -18,7 +18,8 @@ import SoftwareUpdateInfo from "./front/pages/actualizacion-de-software";
 import Nosotros from "./front/pages/nosotros";
 
 
- 
+
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,25 +33,27 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
+
       <ScrollToTop />
       <div className="App">
-        <Navbar />
         <header className="App-header">
+        <Navbar className="fixed-navbar" />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/formclient" element={<FormClient />} />
             <Route path="/formcompany" element={<FormCompany />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/tarifas" element={< PriceCompanyInfo /> } />
+            <Route path="/tarifas" element={< PriceCompanyInfo />} />
             <Route path="/recuperaciondedatos" element={< DataRecoveryInfo />} />
             <Route path="/reparaciondemcbook" element={< MacbookRepairInfo />} />
             <Route path="/reparaciondeiphone" element={< IphoneRepairInfo />} />
             <Route path="/actualizaciondesoftware" element={< SoftwareUpdateInfo />} />
-            <Route path="nosotros" element={<Nosotros />} />  
+            <Route path="nosotros" element={<Nosotros />} />
           </Routes>
           <Footer />
         </header>
       </div>
+
     </Router>
   );
 }
