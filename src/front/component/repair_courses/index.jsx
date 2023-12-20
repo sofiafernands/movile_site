@@ -16,7 +16,7 @@ function RepairCourses() {
             <h2 className="animate-pulse mb-4 mt-4 text-4xl tracking-tight font-extrabold text-white dark:text-white">Forma tu Futuro en la Reparación Móvil con Nuestros Cursos Especializados en Microsoldadura</h2>
             <p className="mb-4 text-white">¿Deseas forjar una carrera exitosa en la industria de la reparación móvil? ¡Has llegado al lugar adecuado! En nuestros Cursos de Microsoldadura, te convertirás en un experto en reparación móvil, adquiriendo las habilidades necesarias para destacar en esta apasionante industria en constante crecimiento.</p>
             <p className="text-white">Nuestros cursos personalizados te permitirán dominar la microsoldadura y te prepararán para una carrera en reparación móvil, donde la demanda de expertos en reparación móvil está en constante aumento.</p>
-            <Link to="/">
+            <Link to="/niveles-de-cursos">
                 <button type="button"
                     className="bg-blue-300 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
                     title="informacion para cliente particular">
